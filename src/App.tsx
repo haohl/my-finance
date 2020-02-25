@@ -1,5 +1,12 @@
 import React from 'react';
 import './App.scss';
+import RouterOutlet from './router-nav/RouterOutlet';
+import { Route } from './router-nav/Route';
+import Dashboard from './pages/dashboard/Dashboard';
+
+const routes: Route[] = [
+  { path: '/dashboard', display: 'Dashboard', component: Dashboard }
+]
 
 function App() {
   return (
@@ -9,10 +16,10 @@ function App() {
           place holder for nav bar
         </div >
         <div className="col h-100 px-0 overflow-auto">
-          place holder for main content
+          <RouterOutlet type="browser" routes={routes} ></RouterOutlet>
         </div>
       </div >
-    </div >
+    </div>
   );
 }
 
